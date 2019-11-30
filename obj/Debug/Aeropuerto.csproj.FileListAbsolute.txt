@@ -1,0 +1,17 @@
+J:\ProyectoFinal\Aeropuerto\bin\Debug\Aeropuerto.exe
+J:\ProyectoFinal\Aeropuerto\bin\Debug\Aeropuerto.pdb
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.csprojAssemblyReference.cache
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.Properties.Resources.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.csproj.GenerateResource.cache
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.exe
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.pdb
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.splash.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.MainPage.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.Dashboard.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.AddFlight.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.FlightList.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.PersonList.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecFlight.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecInterval.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecMoneyParent.resources
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.SellPass.resources
