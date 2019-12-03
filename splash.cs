@@ -31,7 +31,9 @@ namespace Aeropuerto
                 this.Hide();
                 MainPage p = new MainPage();
                 p.Show();
-                }
+            }
         }
+
+        
     }
 }
