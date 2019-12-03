@@ -15,3 +15,6 @@ J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecFlight.resources
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecInterval.resources
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.RecMoneyParent.resources
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.SellPass.resources
+J:\ProyectoFinal\Aeropuerto\bin\Debug\System.Data.SQLite.dll
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.csproj.CopyComplete
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.MensajeDeError.resources
