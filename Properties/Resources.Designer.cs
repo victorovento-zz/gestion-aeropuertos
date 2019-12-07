@@ -103,6 +103,16 @@ namespace Aeropuerto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error_exclamation_512 {
+            get {
+                object obj = ResourceManager.GetObject("error-exclamation-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizer {
             get {
                 object obj = ResourceManager.GetObject("minimizer", resourceCulture);
@@ -173,6 +183,26 @@ namespace Aeropuerto.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money_blurred {
+            get {
+                object obj = ResourceManager.GetObject("money-blurred", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok_perfect_verified_512 {
+            get {
+                object obj = ResourceManager.GetObject("ok-perfect-verified-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap splash {
             get {
                 object obj = ResourceManager.GetObject("splash", resourceCulture);
@@ -216,6 +246,26 @@ namespace Aeropuerto.Properties {
         internal static System.Drawing.Bitmap vuelo_back {
             get {
                 object obj = ResourceManager.GetObject("vuelo-back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vuelo_back1 {
+            get {
+                object obj = ResourceManager.GetObject("vuelo-back1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vuelo_backblurrd {
+            get {
+                object obj = ResourceManager.GetObject("vuelo-backblurrd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

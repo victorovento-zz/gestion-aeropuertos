@@ -43,7 +43,7 @@ namespace Aeropuerto
             }
             else if (Char.IsSeparator(V.KeyChar))
             {
-                V.Handled = false;
+                V.Handled = true;
             }
             else if (char.IsControl(V.KeyChar))
             {
@@ -67,7 +67,7 @@ namespace Aeropuerto
             }
             else if (Char.IsSeparator(V.KeyChar))
             {
-                V.Handled = false;
+                V.Handled = true;
             }
             else if (char.IsControl(V.KeyChar))
             {

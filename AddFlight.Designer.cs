@@ -50,12 +50,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.domainUpDown2 = new System.Windows.Forms.DomainUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(216, 0);
+            this.label1.Location = new System.Drawing.Point(232, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 50);
             this.label1.TabIndex = 1;
@@ -252,6 +254,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 26);
             this.textBox2.TabIndex = 14;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox4
@@ -266,6 +269,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(39, 26);
             this.textBox4.TabIndex = 16;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // textBox5
@@ -280,6 +284,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(39, 26);
             this.textBox5.TabIndex = 17;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // textBox6
@@ -294,13 +299,14 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(56, 26);
             this.textBox6.TabIndex = 18;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
             // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.comboBox1.DisplayMember = "Cuba";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
@@ -363,7 +369,6 @@
             "Costa de Marfil",
             "Costa Rica",
             "Croacia",
-            "Cuba",
             "Dhekelia",
             "Dinamarca",
             "Dominica",
@@ -551,6 +556,7 @@
             "Vanuatu",
             "Venezuela",
             "Vietnam",
+            "Wakanda",
             "Wake Island",
             "Wallis y Futuna",
             "West Bank",
@@ -576,7 +582,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(526, 341);
+            this.button1.Location = new System.Drawing.Point(526, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 41);
             this.button1.TabIndex = 20;
@@ -612,28 +618,6 @@
             this.label10.Size = new System.Drawing.Size(44, 30);
             this.label10.TabIndex = 44;
             this.label10.Text = "KM";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(478, 288);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 30);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Nombre";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(572, 288);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 30);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "XXX-XXX";
             // 
             // comboBox2
             // 
@@ -707,12 +691,143 @@
             "SANTIAGO DE CUBA",
             "GUANTÁNAMO",
             "ISLA DE LA JUVENTUD"});
-            this.comboBox4.Location = new System.Drawing.Point(141, 136);
+            this.comboBox4.Location = new System.Drawing.Point(141, 137);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(186, 33);
             this.comboBox4.TabIndex = 50;
             this.comboBox4.Text = "PINAR DEL RÍO";
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             this.comboBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox4_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(425, 261);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 30);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Hora";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(542, 261);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 30);
+            this.label11.TabIndex = 52;
+            this.label11.Text = ":";
+            // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.domainUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.domainUpDown1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.domainUpDown1.ForeColor = System.Drawing.Color.White;
+            this.domainUpDown1.Items.Add("00");
+            this.domainUpDown1.Items.Add("01");
+            this.domainUpDown1.Items.Add("02");
+            this.domainUpDown1.Items.Add("03");
+            this.domainUpDown1.Items.Add("04");
+            this.domainUpDown1.Items.Add("05");
+            this.domainUpDown1.Items.Add("06");
+            this.domainUpDown1.Items.Add("07");
+            this.domainUpDown1.Items.Add("08");
+            this.domainUpDown1.Items.Add("09");
+            this.domainUpDown1.Items.Add("10");
+            this.domainUpDown1.Items.Add("11");
+            this.domainUpDown1.Items.Add("12");
+            this.domainUpDown1.Items.Add("13");
+            this.domainUpDown1.Items.Add("14");
+            this.domainUpDown1.Items.Add("15");
+            this.domainUpDown1.Items.Add("16");
+            this.domainUpDown1.Items.Add("17");
+            this.domainUpDown1.Items.Add("18");
+            this.domainUpDown1.Items.Add("19");
+            this.domainUpDown1.Items.Add("20");
+            this.domainUpDown1.Items.Add("21");
+            this.domainUpDown1.Items.Add("22");
+            this.domainUpDown1.Items.Add("23");
+            this.domainUpDown1.Location = new System.Drawing.Point(484, 263);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(57, 33);
+            this.domainUpDown1.TabIndex = 53;
+            this.domainUpDown1.Text = "12";
+            // 
+            // domainUpDown2
+            // 
+            this.domainUpDown2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.domainUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.domainUpDown2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.domainUpDown2.ForeColor = System.Drawing.Color.White;
+            this.domainUpDown2.Items.Add("00");
+            this.domainUpDown2.Items.Add("01");
+            this.domainUpDown2.Items.Add("02");
+            this.domainUpDown2.Items.Add("03");
+            this.domainUpDown2.Items.Add("04");
+            this.domainUpDown2.Items.Add("05");
+            this.domainUpDown2.Items.Add("06");
+            this.domainUpDown2.Items.Add("07");
+            this.domainUpDown2.Items.Add("08");
+            this.domainUpDown2.Items.Add("09");
+            this.domainUpDown2.Items.Add("10");
+            this.domainUpDown2.Items.Add("11");
+            this.domainUpDown2.Items.Add("12");
+            this.domainUpDown2.Items.Add("13");
+            this.domainUpDown2.Items.Add("14");
+            this.domainUpDown2.Items.Add("15");
+            this.domainUpDown2.Items.Add("16");
+            this.domainUpDown2.Items.Add("17");
+            this.domainUpDown2.Items.Add("18");
+            this.domainUpDown2.Items.Add("19");
+            this.domainUpDown2.Items.Add("20");
+            this.domainUpDown2.Items.Add("21");
+            this.domainUpDown2.Items.Add("22");
+            this.domainUpDown2.Items.Add("23");
+            this.domainUpDown2.Items.Add("24");
+            this.domainUpDown2.Items.Add("25");
+            this.domainUpDown2.Items.Add("26");
+            this.domainUpDown2.Items.Add("27");
+            this.domainUpDown2.Items.Add("28");
+            this.domainUpDown2.Items.Add("29");
+            this.domainUpDown2.Items.Add("30");
+            this.domainUpDown2.Items.Add("31");
+            this.domainUpDown2.Items.Add("32");
+            this.domainUpDown2.Items.Add("33");
+            this.domainUpDown2.Items.Add("34");
+            this.domainUpDown2.Items.Add("35");
+            this.domainUpDown2.Items.Add("36");
+            this.domainUpDown2.Items.Add("37");
+            this.domainUpDown2.Items.Add("38");
+            this.domainUpDown2.Items.Add("39");
+            this.domainUpDown2.Items.Add("40");
+            this.domainUpDown2.Items.Add("41");
+            this.domainUpDown2.Items.Add("42");
+            this.domainUpDown2.Items.Add("43");
+            this.domainUpDown2.Items.Add("44");
+            this.domainUpDown2.Items.Add("45");
+            this.domainUpDown2.Items.Add("46");
+            this.domainUpDown2.Items.Add("47");
+            this.domainUpDown2.Items.Add("48");
+            this.domainUpDown2.Items.Add("49");
+            this.domainUpDown2.Items.Add("50");
+            this.domainUpDown2.Items.Add("51");
+            this.domainUpDown2.Items.Add("52");
+            this.domainUpDown2.Items.Add("53");
+            this.domainUpDown2.Items.Add("54");
+            this.domainUpDown2.Items.Add("55");
+            this.domainUpDown2.Items.Add("56");
+            this.domainUpDown2.Items.Add("57");
+            this.domainUpDown2.Items.Add("58");
+            this.domainUpDown2.Items.Add("59");
+            this.domainUpDown2.Location = new System.Drawing.Point(559, 263);
+            this.domainUpDown2.Name = "domainUpDown2";
+            this.domainUpDown2.Size = new System.Drawing.Size(57, 33);
+            this.domainUpDown2.TabIndex = 54;
+            this.domainUpDown2.Text = "00";
             // 
             // AddFlight
             // 
@@ -721,12 +836,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(6)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Aeropuerto.Properties.Resources.vuelo2;
             this.ClientSize = new System.Drawing.Size(682, 550);
+            this.Controls.Add(this.domainUpDown2);
+            this.Controls.Add(this.domainUpDown1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -748,6 +865,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddFlight";
             this.Text = "AddFlight";
+            this.Load += new System.EventHandler(this.AddFlight_Load);
+            this.VisibleChanged += new System.EventHandler(this.AddFlight_VisibleChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -781,11 +900,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.DomainUpDown domainUpDown2;
     }
 }
