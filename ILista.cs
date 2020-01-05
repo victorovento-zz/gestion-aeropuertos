@@ -8,8 +8,7 @@ namespace Aeropuerto
     interface ILista<E>
     {
         void add(E e);
-        E get(int Index);
-        int size();
+        E get(int Index);   
         void Clear();
         Boolean isEmpty();
     }

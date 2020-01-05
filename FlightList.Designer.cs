@@ -40,16 +40,16 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTerminal = new System.Windows.Forms.Panel();
+            this.panelPrecios = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.preciosRB = new System.Windows.Forms.RadioButton();
             this.terminalRB = new System.Windows.Forms.RadioButton();
-            this.panelPrecios = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTerminal.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panelPrecios.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +75,9 @@
             this.comboBox3.Items.AddRange(new object[] {
             "1",
             "2",
-            "3"});
+            "3",
+            "4",
+            "5"});
             this.comboBox3.Location = new System.Drawing.Point(296, 14);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(186, 33);
@@ -217,10 +219,34 @@
             this.panelTerminal.Controls.Add(this.label6);
             this.panelTerminal.Controls.Add(this.comboBox3);
             this.panelTerminal.Controls.Add(this.label5);
-            this.panelTerminal.Location = new System.Drawing.Point(0, 47);
+            this.panelTerminal.Location = new System.Drawing.Point(3, 43);
             this.panelTerminal.Name = "panelTerminal";
             this.panelTerminal.Size = new System.Drawing.Size(680, 501);
             this.panelTerminal.TabIndex = 60;
+            // 
+            // panelPrecios
+            // 
+            this.panelPrecios.BackgroundImage = global::Aeropuerto.Properties.Resources.vuelo_back;
+            this.panelPrecios.Controls.Add(this.listBox1);
+            this.panelPrecios.Controls.Add(this.label3);
+            this.panelPrecios.Location = new System.Drawing.Point(1, 47);
+            this.panelPrecios.Name = "panelPrecios";
+            this.panelPrecios.Size = new System.Drawing.Size(679, 501);
+            this.panelPrecios.TabIndex = 62;
+            this.panelPrecios.Visible = false;
+            this.panelPrecios.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrecios_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(120, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(425, 40);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Vuelos Ordenados por su precio";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -269,37 +295,13 @@
             this.terminalRB.UseVisualStyleBackColor = true;
             this.terminalRB.CheckedChanged += new System.EventHandler(this.terminalRB_CheckedChanged);
             // 
-            // panelPrecios
-            // 
-            this.panelPrecios.BackgroundImage = global::Aeropuerto.Properties.Resources.vuelo_back;
-            this.panelPrecios.Controls.Add(this.listBox1);
-            this.panelPrecios.Controls.Add(this.label3);
-            this.panelPrecios.Location = new System.Drawing.Point(0, 46);
-            this.panelPrecios.Name = "panelPrecios";
-            this.panelPrecios.Size = new System.Drawing.Size(679, 501);
-            this.panelPrecios.TabIndex = 62;
-            // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(77)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(62, 64);
+            this.listBox1.Location = new System.Drawing.Point(85, 83);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(565, 377);
+            this.listBox1.Size = new System.Drawing.Size(468, 329);
             this.listBox1.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(120, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(425, 40);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Vuelos Ordenados por su precio";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FlightList
             // 
@@ -318,10 +320,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTerminal.ResumeLayout(false);
             this.panelTerminal.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panelPrecios.ResumeLayout(false);
             this.panelPrecios.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,7 +347,7 @@
         private System.Windows.Forms.RadioButton preciosRB;
         private System.Windows.Forms.RadioButton terminalRB;
         private System.Windows.Forms.Panel panelPrecios;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

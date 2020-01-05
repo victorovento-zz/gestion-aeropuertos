@@ -26,12 +26,6 @@ namespace Aeropuerto
             {
                 
             V.Handled = true;
-            // DialogResult resultado = new DialogResult();
-            // MensajeDeError error = new MensajeDeError("Entre solo letras");
-
-            //resultado = error.ShowDialog();
-                
-                
             }
         }
 
@@ -52,10 +46,6 @@ namespace Aeropuerto
             else
             {
                 V.Handled = true;
-           //DialogResult resultado = new DialogResult();
-           //   MensajeDeError error = new MensajeDeError("Entre solo números");
-
-           //  resultado = error.ShowDialog();
             }
         }
 
@@ -80,10 +70,6 @@ namespace Aeropuerto
             else
             {
                 V.Handled = true;
-          //   DialogResult resultado = new DialogResult();
-          //    MensajeDeError error = new MensajeDeError("Entre solo números");
-
-          //resultado = error.ShowDialog();
             }
         }
 
@@ -108,10 +94,6 @@ namespace Aeropuerto
             else
             {
                 V.Handled = true;
-                //   DialogResult resultado = new DialogResult();
-                //    MensajeDeError error = new MensajeDeError("Entre solo números");
-
-                //resultado = error.ShowDialog();
             }
         }
 

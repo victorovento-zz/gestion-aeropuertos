@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 27.75F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(160, 3);
+            this.label1.Location = new System.Drawing.Point(200, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 100);
             this.label1.TabIndex = 2;
@@ -58,7 +58,7 @@
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.ForeColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(193, 124);
+            this.comboBox2.Location = new System.Drawing.Point(251, 124);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(246, 33);
             this.comboBox2.TabIndex = 49;
@@ -87,7 +87,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(65, 163);
+            this.panel1.Location = new System.Drawing.Point(96, 163);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 377);
             this.panel1.TabIndex = 51;

@@ -15,7 +15,7 @@ namespace Aeropuerto
         public RecFlight()
         {
             InitializeComponent();
-            SQLiteConnection cadenaconexion = new SQLiteConnection("Data Source = C:/AEROPUERTO/basesdedatos.db");
+            SQLiteConnection cadenaconexion = BaseDatos.ConectarBD();
             cadenaconexion.Open();
             SQLiteCommand comando = new SQLiteCommand("SELECT Fecha,NumeroTerminal FROM Vuelos", cadenaconexion);
             SQLiteDataReader registro = comando.ExecuteReader();

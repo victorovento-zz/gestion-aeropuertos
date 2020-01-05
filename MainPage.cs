@@ -36,7 +36,10 @@ namespace Aeropuerto
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("¿Estás seguro de que desea salir?","!!!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -205,6 +208,12 @@ namespace Aeropuerto
         {
             label2.Text = DateTime.Now.ToLongTimeString();
             label3.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            AboutBox1 ab = new AboutBox1();
+            ab.Visible = true;
         }
     }
 }

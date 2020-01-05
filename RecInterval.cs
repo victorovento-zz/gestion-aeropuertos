@@ -12,7 +12,7 @@ namespace Aeropuerto
 {
     public partial class RecInterval : Form
     {
-        SQLiteConnection cadenaconexion = new SQLiteConnection("Data Source = C:/AEROPUERTO/basesdedatos.db");
+        SQLiteConnection cadenaconexion = BaseDatos.ConectarBD();
 
         public RecInterval()
         {
@@ -51,21 +51,9 @@ namespace Aeropuerto
             if (!FinalCB.Text.Equals("Final"))
             {
                 {
-                    cadenaconexion.Open();
-                    SQLiteCommand comando2 = new SQLiteCommand("SELECT PrecioPasaje FROM Pasaje WHERE " +
-                        "Fecha >= '" + InicioCB.Text + "' AND Fecha <= '" + FinalCB.Text + "'", cadenaconexion);
-                    SQLiteDataReader registro2 = comando2.ExecuteReader();
-                    int c = 0;
-
-                    double sum = 0;
-                    while (registro2.Read())
-                    {
-                        sum = sum + double.Parse(registro2["PrecioPasaje"].ToString());
-                        c++;
-                    }
-                    cadenaconexion.Close();
-                    label3.Text = "$ " + sum.ToString();
-                    label4.Text = c.ToString() + " VUELOS";
+                    string inicio = InicioCB.Text;
+                    string final = FinalCB.Text;
+                    Pasaje.recaudadoIntervalo(cadenaconexion, inicio, final, label3, label4);
                 }
             }
             else

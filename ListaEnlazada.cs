@@ -6,78 +6,84 @@ using System.Text;
 namespace Aeropuerto
 {
 
-    
+
 
     class ListaEnlazada<E> : ILista<E>
     {
 
-        private int Size;
-        private Node<E> first;
-        private Node<E> last;
+        private int size;
+        public Node<E> head = null;
+        private Node<E> current;
 
-        private class Node<E>
-            {
+        public ListaEnlazada()
+        {
+            head = null;
+            size = 0;
+            current = head;
+        }
+
+        public int Size { get => size; set => size = value; }
+
+        public class Node<E>
+        {
             public E data;
-            public Node<E> next;
-    
+            public Node<E> next = null;
+
             public Node(E e)
             {
                 data = e;
-                next = null;
             }
 
         }
         public void add(E e)
         {
-            Node<E> node = new Node<E>(e);
-            if (first == null)
+            Node<E> nodo = new Node<E>(e);
+            if (head == null)
             {
-                first = node;
+                head = nodo;
             }
             else
             {
-                Node<E> puntero = first;
-                int c = 0;
+                Node<E> puntero = head;
                 while (puntero.next != null)
                 {
                     puntero = puntero.next;
-                    c++;
                 }
-                node.next = puntero.next;
-                puntero.next = node;
-
+                puntero.next = nodo;
             }
+            size++;
         }
 
         public void Clear()
         {
             Node<E> next = null;
-            for (Node<E> x = this.first; x!=null; x = next) {
+            for (Node<E> x = this.head; x != null; x = next)
+            {
                 next = x.next;
                 x.data = default(E);
                 x.next = null;
             }
-            this.first = this.last = null;
-            this.Size = 0;
-            ++this.Size;
+            this.head = null;
+            this.size = 0;
+            ++this.size;
         }
 
         public E get(int Index)
         {
-            if (first == null)
+            if (head == null)
             {
                 return default(E);
             }
             else
             {
-                Node<E> puntero = first;
+                Node<E> puntero = head;
                 int contador = 0;
-                while (contador<Index && puntero.next != null)
+                while (contador < Index && puntero.next != null)
                 {
                     puntero = puntero.next;
                     contador++;
                 }
-                if(contador!= Index)
+                if (contador != Index)
                 {
                     return default(E);
                 }
@@ -91,14 +97,72 @@ namespace Aeropuerto
 
         public bool isEmpty()
         {
-            return first == null;
+            return head == null;
         }
 
-        public int size()
+        public Node<Vuelo> SortedMerge(Node<Vuelo> a, Node<Vuelo> b)
         {
-            return Size;
+            Node<Vuelo> result = null;
+            //Casos bases
+            if (a == null) return b;
+            if (b == null) return a;
+            //Selecciona 1, a o b y hace recursión
+            if (a.data.Precio <= b.data.Precio)
+            {
+                result = a;
+                result.next = SortedMerge(a.next, b);
+            }
+            else
+            {
+                result = b;
+                result.next = SortedMerge(a, b.next);
+            }
+            return result;
         }
 
-        
+        public Node<Vuelo> mergeSort(Node<Vuelo> h)
+        {
+            //Caso base: Si first es null
+            if (h == null || h.next == null)
+            {
+                return h;
+            }
+            //Obtener el medio de la lista
+            Node<Vuelo> middle = getMiddle(h);
+            Node<Vuelo> nextofmiddle = middle.next;
+            //Establece el nodo siguiente al del medio a null
+            middle.next = null;
+            //Aplica MergeSort a la lista izquierda
+            Node<Vuelo> left = mergeSort(h);
+            //Aplica Merge Sort a la derecha
+            Node<Vuelo> right = mergeSort(nextofmiddle);
+            //Mezcla las listas izquierda y derecha
+            Node<Vuelo> sortedlist = SortedMerge(left, right);
+            return sortedlist;
+        }
+
+        //Utilidad para obtener
+        //el medio de la LinkedLIst
+
+        Node<Vuelo> getMiddle(Node<Vuelo> h)
+        {
+            //Caso base
+            if (h == null) return h;
+            Node<Vuelo> fastptr = h.next;
+            Node<Vuelo> slowptr = h;
+
+            while (fastptr != null)
+            {
+                fastptr = fastptr.next;
+                if (fastptr != null)
+                {
+                    slowptr = slowptr.next;
+                    fastptr = fastptr.next;
+                }
+            }
+            return slowptr;
+
+        }
+
     }
 }

@@ -657,7 +657,9 @@
             this.comboBox3.Items.AddRange(new object[] {
             "1",
             "2",
-            "3"});
+            "3",
+            "4",
+            "5"});
             this.comboBox3.Location = new System.Drawing.Point(141, 215);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(186, 33);

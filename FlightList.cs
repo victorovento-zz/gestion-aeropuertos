@@ -13,7 +13,7 @@ namespace Aeropuerto
     public partial class FlightList : Form
     {
 
-        SQLiteConnection cadenaconexion = new SQLiteConnection("Data Source = C:/AEROPUERTO/basesdedatos.db");
+        SQLiteConnection cadenaconexion = BaseDatos.ConectarBD();
 
         public FlightList()
         {
@@ -42,7 +42,7 @@ namespace Aeropuerto
 
         private void LlenarTabla()
         {
-            
+
             string d = textBox4.Text.ToUpper();
             string m = textBox5.Text.ToUpper();
             string y = textBox6.Text.ToUpper();
@@ -75,15 +75,7 @@ namespace Aeropuerto
 
                         if (Int32.Parse(y) <= 2020 && Int32.Parse(y) >= 2000)
                         {
-                            cadenaconexion.Open();
-                            SQLiteDataAdapter da;
-                            da = new SQLiteDataAdapter("SELECT Fecha, Pais, Ciudad, CantidadKM, " +
-                                "Arribo, CAO FROM Vuelos WHERE NumeroTerminal = '" + comboBox3.Text + "' AND Fecha LIKE '%" + y+"/"+m+"/"+d + "%'", cadenaconexion);
-                            DataTable dt = new DataTable();
-                            da.Fill(dt);
-                            dataGridView1.DataSource = dt;
-
-                            cadenaconexion.Close();
+                            Vuelo.ObtenerVuelosTerminal(dataGridView1, cadenaconexion, comboBox3,y,m,d);
                         }
                     }
                 }
@@ -110,112 +102,29 @@ namespace Aeropuerto
 
         private void terminalRB_CheckedChanged(object sender, EventArgs e)
         {
-            if (terminalRB.Checked)
-            {
-                panelTerminal.Visible = true;
-                panelPrecios.Visible = false;
-            }
-            else
-            {
-                panelTerminal.Visible = false;
-                panelPrecios.Visible = true;
-            }
+
         }
 
         private void preciosRB_CheckedChanged(object sender, EventArgs e)
         {
             if (preciosRB.Checked)
             {
-                ListaEnlazada<Vuelo> lista = new ListaEnlazada<Vuelo>();
-                cadenaconexion.Open();
-                SQLiteCommand comando = new SQLiteCommand("SELECT * FROM Vuelos", cadenaconexion);
-                SQLiteDataReader registro = comando.ExecuteReader();
+                panelPrecios.Visible = true;
+                panelTerminal.Visible = false;
 
-                while (registro.Read())
-                {
-                    bool internacional = false;
-                    if ((registro["Internacional"].ToString().Equals("1")))
-                    {
-                        internacional = true;
-                    }else if ((registro["Internacional"].ToString().Equals("0")))
-                    {
-                        internacional = false;
-                    }
+                Vuelo.ordenarPrecios(cadenaconexion, listBox1);
 
-                    bool arribo = false;
-                    if ((registro["Arribo"].ToString().Equals("1")))
-                    {
-                        arribo = true;
-                    }
-                    else if ((registro["Arribo"].ToString().Equals("0")))
-                    {
-                        arribo = false;
-                    }
-
-                    string[] i = new string[1];
-                    bool isInternacional = false;
-                    string[] precios = new string[3];
-                    string[] cantKM = new string[1];
-
-                    //   SQLiteConnection cadenaconexion = new SQLiteConnection("Data Source = C:/AEROPUERTO/basesdedatos.db");
-                    cadenaconexion.Open();
-                    SQLiteCommand comando4 = new SQLiteCommand("SELECT Precios FROM Precios", cadenaconexion);
-                    SQLiteDataReader registro4 = comando4.ExecuteReader();
-
-                    int p = 0;
-                    while (registro4.Read())
-                    {
-                        precios[p] = registro4["Precios"].ToString();
-                        p++;
-                    }
-                    SQLiteCommand comando2 = new SQLiteCommand("SELECT Internacional FROM Vuelos", cadenaconexion);
-                    SQLiteDataReader registro2 = comando2.ExecuteReader();
-
-                    while (registro2.Read())
-                    {
-                        i[0] = registro2["Internacional"].ToString();
-                    }
-                    if (i[0].Equals("0"))
-                    {
-                        isInternacional = false;
-                    }
-                    if (i[0].Equals("1"))
-                    {
-                        isInternacional = true;
-                    }
-                    char[] x = registro["Fecha"].ToString().ToCharArray();
-                    SQLiteCommand comando3 = new SQLiteCommand("SELECT CantidadKM FROM Vuelos WHERE Fecha = '" + x[0] + x[1] + x[2] + x[3] + x[4] + x[5] + x[6] + x[7] + x[8] + x[9] + x[10] +
-                        x[11] + x[12] + x[13] + x[14] + x[15] + "'", cadenaconexion);
-                    SQLiteDataReader registro3 = comando3.ExecuteReader();
-
-                    while (registro3.Read())
-                    {
-                        cantKM[0] = registro3["CantidadKM"].ToString();
-                    }
-
-                    float precio = 0;
-                    if (isInternacional)
-                    {
-                        precio = float.Parse(precios[1]) + (float)0.10 * (float.Parse(cantKM[0]) + float.Parse(precios[1]));
-                    }
-                    else
-                    {
-                        precio = float.Parse(precios[0]) + (float)0.20 * (float.Parse(cantKM[0]) + float.Parse(precios[1]));
-                    }
-                    
-                    cadenaconexion.Close();
-
-                    Vuelo vuelo = new Vuelo(internacional,arribo, registro["Fecha"].ToString(),
-                        registro["NumeroTerminal"].ToString(), registro["Pais"].ToString(),
-                        registro["Ciudad"].ToString(), registro["CantidadKM"].ToString(),
-                        Int32.Parse(registro["CAO"].ToString()), registro["NueroMatricula"].ToString(),precio);
-
-                    lista.add(vuelo);
-
-
-                }
-                cadenaconexion.Close();
             }
+            else
+            {
+                panelPrecios.Visible = false;
+                panelTerminal.Visible = true;
+            }
+        }
+
+        private void panelPrecios_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

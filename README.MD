@@ -2,10 +2,9 @@
 #        SISTEMA DE GESTION DE AEROPUERTOS         #
 ####################################################
 Autor: Víctor Omar Vento Hernández
-Grupo: Ingeniería Informática 2
+Grupo: Ingeniería Informática II
 Universidad de Pinar del Río
 https://github.com/victorovento/
-
 
 ###########################################################################
                        REQUISITOS DEL SISTEMA
@@ -19,6 +18,12 @@ Procesador a 266 MHz
 ###########################################################################
                           LISTA DE CAMBIOS
 ###########################################################################
+1.0.1 12-12-2019
+-Añadida la posibilidad de ver vuelos ordenados por precio.
+-Se pueden ver las personas que viajaron en primera clase.
+-Solucionado el error que duplicaba la lista de vuelos por intervalo.
+-Arreglados problemas de visualización de la GUI.
+-Nuevo Splash
 0.3 5-12-2019
 -Añadida la funcionalidad de calcular dinero recaudado en un vuelo
 -Cambios en la interfaz

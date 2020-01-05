@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Aeropuerto
 {
@@ -14,6 +15,13 @@ namespace Aeropuerto
         public PersonList()
         {
             InitializeComponent();
+            
+        }
+
+        private void PersonList_Load(object sender, EventArgs e)
+        {
+            DataTable dt = Pasaje.cargarPersonas();
+            dataGridView1.DataSource = dt;
         }
     }
 }
