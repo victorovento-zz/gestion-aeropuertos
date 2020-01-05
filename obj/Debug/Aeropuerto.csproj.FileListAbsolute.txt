@@ -18,3 +18,10 @@ J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.csproj.GenerateResource.cache
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.csproj.CopyComplete
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.exe
 J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.pdb
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.AboutBox1.resources
+J:\ProyectoFinal\Aeropuerto\bin\Debug\Aeropuerto.exe.config
+J:\ProyectoFinal\Aeropuerto\bin\Debug\Aeropuerto.exe.manifest
+J:\ProyectoFinal\Aeropuerto\bin\Debug\Aeropuerto.application
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.TrustInfo.xml
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.exe.manifest
+J:\ProyectoFinal\Aeropuerto\obj\Debug\Aeropuerto.application
